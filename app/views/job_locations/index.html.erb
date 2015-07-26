@@ -1,0 +1,37 @@
+<section class="section-4">
+  <div class="container">
+    <div class="pull-right">
+      <%= link_to job_locations_new_path, class: 'btn btn-bg bg-sea' do %>
+        <i class="fa fa-plus"></i>
+        Add New Job Location
+      <% end %>
+    </div>
+
+    <% if @job_locations.any? %>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Location</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @job_locations.each do |job_location| %>
+            <tr>
+              <td><%= job_location.title %></td>
+              <td>
+                <%= link_to 'Edit', job_location_edit_path(job_location) %> |
+                <%= link_to 'Delete', job_location_delete_path(job_location),
+                                      method: :delete,
+                                      data: { confirm: 'You sure?' } %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% else %>
+      <h3 class="center">There are no job locations.</p>
+      <%= link_to 'Add one here...', job_locations_new_path, class: 'center btn btn-bg bg-sea' %>
+    <% end %>
+  </div>
+</section>

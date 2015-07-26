@@ -1,0 +1,48 @@
+<section class="section-4">
+  <div class="container">
+
+    <% if user_signed_in? %>
+      <div class="pull-right action-bar">
+        <%= link_to job_locations_path, class: 'btn btn-bg bg-sea' do %>
+          <i class="fa fa-link"></i>
+          Manage Job Locations
+        <% end %>
+
+        <%= link_to job_new_path, class: 'btn btn-bg bg-green' do %>
+          <i class="fa fa-plus"></i>
+          New Job
+        <% end %>
+      </div>
+    <% end %>
+
+    <div class="row">
+      <div class="col-sm-5 col-md-4">
+        <aside class="sidebar-jobs">
+          <ul class="jobs-list mb50">
+            <% @job_locations.each do |job_location| %>
+              <li class="job-location"><%= job_location.title %></li>
+
+              <% if job_location.jobs.any? %>
+                <% job_location.jobs.each do |job| %>
+                  <li>
+                    <%= link_to job.title, job %>
+                    <% if user_signed_in? %>
+                      <%= link_to 'Edit', job_edit_path(job), style: 'color:red;' %>
+                    <% end %>
+                  </li>
+                <% end %>
+              <% else %>
+                <li class="text-warning">No open positions.</li>
+              <% end %>
+            <% end %>
+          </ul>
+        </aside>
+      </div>
+      <div class="col-sm-7 col-md-8 space-left">
+        <div class="row">
+          <p>There are currently no jobs available, please check back later.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

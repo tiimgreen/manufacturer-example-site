@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-gb">
 <head>
+  <meta charset="utf-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><%= page_title @page_title %></title>
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/editor/0.1.0/editor.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel='stylesheet' href='//fonts.useso.com/css?family=Open+Sans:300,400,400italic,600,700|Raleway:300,400,500,600'>
+
+  <%= render 'layouts/blog_meta_info' if on_page('blog_articles', 'show') %>
 
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= csrf_meta_tags %>
@@ -14,12 +17,25 @@
 <%= render 'layouts/sidebar' if user_signed_in? %>
 
 <div id="body">
-  <%= render 'layouts/header' %>
-  <%= render 'shared/flash_messages' %>
+  <% if on_page('blog_articles', 'show') && !@blog_article.is_published %>
+    <div id="wrapper" class="unpublished">
+  <% else %>
+    <div id="wrapper">
+  <% end %>
 
-  <%= yield %>
+    <% if !on_page('sessions', 'new') %>
+      <%= render 'layouts/header' %>
+      <%= render 'layouts/page_header' if !current_page?(root_url) %>
 
-  <%= render 'layouts/footer' %>
+      <div class="container">
+        <%= render 'shared/flash_messages' %>
+      </div>
+    <% end %>
+
+    <%= yield %>
+
+    <%= render 'layouts/footer' unless on_page('sessions', 'new') %>
+  </div>
 </div>
 
 <script src="//cdn.jsdelivr.net/editor/0.1.0/editor.js"></script>

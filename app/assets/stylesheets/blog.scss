@@ -1,0 +1,31 @@
+// Place all the styles related to the Blog controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.form-group {
+
+  .col-sm-10,
+  .col-sm-2 {
+    margin-top: 20px;
+  }
+}
+
+.unpublished#wrapper {
+  background: #ddd;
+}
+
+.edit-blog-container {
+  margin-top: -30px;
+}
+
+.unpublished-banner {
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: auto;
+  background: #ddd;
+  padding: 5px 0;
+  text-align: center;
+}

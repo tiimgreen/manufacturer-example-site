@@ -1,0 +1,22 @@
+<% unless on_page('team_members', 'show') %>
+  <!-- Page Header -->
+  <header class="titlebar titlebar1">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h1 class="page-title pull-left"><%= @breadcrumb_components.last[:name] %></h1>
+          <ol class="breadcrumb pull-right">
+            <% @breadcrumb_components.each_with_index do |comp, i| %>
+              <% if i == @breadcrumb_components.length - 1 %>
+                <li class="active"><%= comp[:name] %></li>
+              <% else %>
+                <li><%= link_to comp[:name], comp[:path] %></li>
+              <% end %>
+            <% end %>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- END Page Header -->
+<% end %>

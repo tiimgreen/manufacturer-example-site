@@ -1,0 +1,31 @@
+<!-- Header -->
+<header class="header-wrapper ">
+  <div class="main-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-2">
+          <%= link_to root_path, class: 'logo' do %>
+            <%= image_tag 'voyo/logo.png', alt: 'Logo' %>
+          <% end %>
+        </div>
+        <div class="col-sm-12 col-md-10">
+          <nav class="navbar-right">
+            <ul class="menu">
+              <li class="toggle-menu">
+                <span class="title">Menu</span>
+                <span class="icon"><i></i><i></i><i></i></span>
+              </li>
+
+              <li class="first"><%= link_to 'Home', root_path, data: { hover: 'Home' } %></li>
+              <li><%= link_to 'Blog', blog_articles_path, data: { hover: 'Blog' } %></li>
+              <li><%= link_to 'Products', products_path, data: { hover: 'Products' } %></li>
+              <li><%= link_to 'Team', team_members_path, data: { hover: 'Team' } %></li>
+              <li><%= link_to 'Jobs', jobs_path, data: { hover: 'Jobs' } %></li>
+              <li><%= link_to 'Contact', contact_path, data: { hover: 'Contact' } %></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div> <!-- END Container -->
+  </div> <!-- END Main-Header -->
+</header> <!-- END Header -->

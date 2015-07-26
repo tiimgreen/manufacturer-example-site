@@ -12,4 +12,19 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap/bootstrap.min
+//= require rs/jquery.themepunch.revolution
+//= require rs/jquery.themepunch.tools
+//= require voyo/jquery.appear
+//= require voyo/retina
+//= require voyo/jflickrfeed
+//= require voyo/chart
+//= require voyo/jquery.countTo
+//= require voyo/jquery.zoom.min
+//= require voyo/owl.carousel.min
+//= require voyo/voyo
 //= require_tree .
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})

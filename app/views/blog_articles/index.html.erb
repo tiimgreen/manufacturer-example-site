@@ -1,0 +1,50 @@
+<section class="section-4">
+  <div class="container">
+    <div class="row">
+      <% if user_signed_in? %>
+        <div class="pull-right action-bar">
+          <%= link_to blog_article_new_path, class: 'btn btn-bg bg-green' do %>
+            <i class="fa fa-plus"></i>
+            New Blog Article
+          <% end %>
+        </div>
+      <% end %>
+      <div class="col-sm-12">
+        <div id="portfolio-isotope">
+          <div class="portfolio-container">
+            <div class="row">
+              <div class="portfolio">
+                <% @blog_articles.each do |blog_article| %>
+                  <div class="col-sm-6 col-md-4 el animated" data-anim="fadeInUp">
+                    <div class="blog-item">
+                      <% if user_signed_in? && !blog_article.is_published %>
+                        <div class="unpublished-banner">Unpublished</div>
+                      <% end %>
+                      <div class="blog-image">
+                        <% if blog_article.image.url != '/missing.png' %>
+                          <%= image_tag blog_article.image.url %>
+                        <% end %>
+                      </div>
+                      <div class="blog-caption">
+                        <h3 class="post-title"><%= blog_article.title %></h3>
+                        <div class="sub-post-title">
+                          <span><%= blog_article.created_at.strftime("%e %b %Y") %></span>
+                          <span>
+                            <i class="fa fa-user"></i>
+                            <%= link_to "by #{blog_article.author.name}", '#' %>
+                          </span>
+                        </div>
+                        <p><%= blog_article.body %></p>
+                        <%= link_to 'Read more', blog_article_path(blog_article), class: 'read-more' %>
+                      </div>
+                    </div>
+                  </div> <!-- END Blog Item -->
+                <% end %>
+              </div> <!-- END portfolio Blog -->
+            </div>
+          </div> <!-- END portfolio Container -->
+        </div> <!-- END Portfolio Isotope -->
+      </div>
+    </div>
+  </div>
+</section> <!-- END Blog Page-->

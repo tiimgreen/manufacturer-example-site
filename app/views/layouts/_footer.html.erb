@@ -1,0 +1,79 @@
+<!-- Footer Wrapper -->
+<footer class="footer-wrapper">
+  <div class="main-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <p><%= edit_text('footer_tagline') %></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <hr class="footer-hr">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <div class="row">
+            <div class="col-sm-12 col-md-11">
+              <div class="footer-widget">
+                <h3 class="widget-title"><%= edit_text('footer_about_us_title', 'About Us') %></h3>
+                <p class="mb25"><%= edit_text('footer_about_us_body') %></p>
+                <address class="contact-info">
+                  <p>
+                    <i class="fa fa-map-marker box-icon color-white"></i>
+                    <%= SiteSetting.find_by(key: 'company_address_short').value %>
+                  </p>
+                  <p>
+                    <i class="fa fa-phone box-icon color-white"></i>
+                    <%= SiteSetting.find_by(key: 'company_phone_number').value %>
+                  </p>
+                </address>
+              </div> <!-- END Footer Widget Keep in touch -->
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="footer-widget">
+                <h3 class="widget-title"><%= edit_text('footer_blog_title', 'Latest Posts') %></h3>
+                <ul class="footer-posts">
+                  <% @footer_blog_articles.each do |blog_article| %>
+                    <li>
+                      <%= link_to blog_article_path(blog_article) do %>
+                        <i class="fa fa-wordpress"></i>
+                        <%= blog_article.title %>
+                      <% end %>
+                    </li>
+                  <% end %>
+                </ul>
+              </div> <!-- END Latest posts -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> <!-- END Main Footer -->
+  <div class="sub-footer white-sub-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="pull-left">
+            <p>&copy; Copyright <%= Time.now.year %> <%= SiteSetting.find_by(key: 'company_name').value %></p>
+          </div>
+          <div class="pull-right">
+            <ul class="footer-menu">
+              <li><%= link_to 'Home', root_path %></li>
+              <li><%= link_to 'Contact', contact_path %></li>
+              <li><a href="#">Events</a></li>
+              <li><%= link_to 'Blog', blog_path %></li>
+              <li><a href="#">Terms</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> <!-- END Sub footer -->
+</footer> <!-- END Footer -->

@@ -1,0 +1,39 @@
+<section class="shop-section section-4">
+  <div class="container">
+    <div class="row">
+      <% if user_signed_in? %>
+        <div class="pull-right">
+          <%= link_to products_new_path, class: 'btn btn-bg bg-green' do %>
+            <i class="fa fa-plus"></i>
+            New Product
+          <% end %>
+        </div>
+      <% end %>
+
+      <div class="col-sm-12">
+        <div class="row shop-products">
+          <% @products.each do |product| %>
+            <a href="<%= product_path(product) %>">
+              <div class="col-sm-6 col-md-4 col-lg-3">
+                <figure class="shop-product">
+                  <div class="shop-image">
+                    <%= image_tag product.product_images.first.image.url %>
+                    <div class="shop-actions">
+                      <p><%= truncate strip_tags(@markdown.render(product.description).html_safe) %></p>
+                      <%= link_to product_path(product), class: 'btn voyo-btn see', title: 'See details', data: { toggle: 'tooltip' } do %>
+                        <i class="fa fa-search"></i>
+                      <% end %>&nbsp;
+                    </div>
+                  </div>
+                  <figcaption class="shop-description">
+                    <h4><%= link_to product.name, product_path(product) %></h4>
+                  </figcaption>
+                </figure>
+              </div>
+            </a>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

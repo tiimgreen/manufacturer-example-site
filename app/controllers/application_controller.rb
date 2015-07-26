@@ -3,8 +3,8 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  before_action :set_page
-  before_action :set_title
+  before_action :set_page, :set_title, :set_breadcrumbs, :set_footer_blog_articles
+  before_filter :configure_permitted_parameters, if: :devise_controller?
 
   protected
 
@@ -23,6 +23,33 @@ class ApplicationController < ActionController::Base
         else
           @page_title = action_name.titleize
         end
+      end
+    end
+
+    def set_breadcrumbs
+      path = request.env['PATH_INFO']
+
+      @breadcrumb_components = [
+        { name: 'Home', path: '/' }
+      ]
+
+      base_path = ''
+
+      path.split('/').reject(&:empty?).each do |path|
+        base_path += "/#{path}"
+        @breadcrumb_components.push({ name: path.titleize, path: base_path })
+      end
+    end
+
+    def set_footer_blog_articles
+      @footer_blog_articles = BlogArticle.where(is_published: true).last(4).reverse
+    end
+
+    def configure_permitted_parameters
+      # rubocop:disable Blocks, BlockAlignment, LineLength
+      devise_parameter_sanitizer.for(:account_update) do |u|
+        u.permit(:first_name, :last_name, :email, :password,
+                 :password_confirmation, :current_password, :info, :avatar)
       end
     end
 

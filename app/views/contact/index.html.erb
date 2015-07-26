@@ -1,0 +1,110 @@
+<section class="section large-padding page-contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 sm-box2">
+        <h3 class="box-title mt0"><%= edit_text('contact_page_about_title', 'About us') %></h3>
+        <p class="mb40"><%= edit_text('contact_page_about_body', 'We are a worldwide supplier to electrical components with over 1,000 clients world-wide we can deliver bespoke solutions to suit your businesses needs.') %></p>
+        <h3 class="box-title mt0"><%= edit_text('contact_page_hq_title', 'Headquarters') %></h3>
+        <p><%= edit_text('contact_page_hq_body') %></p>
+        <p>
+          <a href="#" class="btn btn-bg bg-dark wide btn-address-toggle" data-target="london">London</a>
+          <a href="#" class="btn btn-bg bg-dark boxed btn-address-toggle" data-target="dublin">Dublin</a>
+          <a href="#" class="btn btn-bg bg-dark boxed btn-address-toggle" data-target="los-angeles">Los Angeles</a>
+        </p>
+      </div>
+      <div class="col-md-8">
+        <div class="address" id="london">
+          123 Street Lane,<br>
+          London<br>
+          United Kindgom
+        </div>
+        <div class="address" id="dublin" style="display: none;">
+          123 Street Lane,<br>
+          Dublin<br>
+          United Kindgom
+        </div>
+        <div class="address" id="los-angeles" style="display: none;">
+          123 Street Lane,<br>
+          Los Angeles<br>
+          United Kindgom
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="contact-section section-3 m0 large-padding custom-bg parallax" data-bg="<%= image_path "voyo/demo/s-201.jpg" %>">
+  <div class="bg-layer"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-5 sm-box">
+        <h2 class="section-title st2 text-left mt10 mb25">Get in touch with us</h2>
+        <p class="contact-p">Send our customer support team a message and we aim to reply within 24 hours.</p>
+        <address class="mb50">
+          <p><i class="fa fa-map-marker"></i> <%= SiteSetting.find_by(key: 'company_address_short').value %></p>
+          <p><i class="fa fa-phone"></i> <%= SiteSetting.find_by(key: 'company_phone_number').value %></p>
+          <p><i class="fa fa-envelope"></i> <%= SiteSetting.find_by(key: 'contact_email').value %></p>
+        </address>
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#tab-contact" data-toggle="tab">Contact us</a></li>
+          <li><a href="#tab-subscribe" data-toggle="tab">Subscribe</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-12 col-md-6 col-md-offset-1">
+        <div class="tab-content">
+          <div class="tab-pane fade in active" id="tab-contact">
+            <!-- Working contact form -->
+            <form class="working-contact-form form" action="#">
+              <!-- Success and error Alerts -->
+              <div class="alert alert-success hidden br0" id="contact-success">
+                <span class="glyphicon glyphicon-ok "></span> &nbsp;
+                <strong>Success!</strong> Thank you for your message.
+              </div>
+              <div class="alert alert-danger hidden br0" id="contact-error">
+                <span class="glyphicon glyphicon-remove "></span> &nbsp;
+                <strong>Error!</strong> Oops, something went wrong.
+              </div>
+              <!-- Form Fields -->
+              <div>
+                <div class="form-group">
+                  <div class="form-icon icon-user">
+                    <input name="name" id="name" type="text" required class="form-control" placeholder="Name">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="form-icon icon-email">
+                    <input name="email" id="email" type="email" required class="form-control" placeholder="Email">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="form-icon icon-message">
+                    <textarea name="message" id="message" cols="30" rows="8" required class="form-control" placeholder="Message"></textarea>
+                  </div>
+                </div>
+                <input type="submit" value="Submit">
+              </div> <!-- END Form Fields -->
+            </form>
+            </div>
+            <div class="tab-pane fade" id="tab-subscribe">
+              <!-- Subscribe form -->
+              <form action="#" class="form form-subscribe">
+                <div class="row">
+                  <div class="col-sm-9">
+                    <div class="form-group">
+                    <input name="email-subscribe" id="email-subscribe" type="email" required class="form-control" placeholder="Email">
+                  </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <input type="submit" value="Subscribe">
+                  </div>
+                </div>
+              </form>
+              <h3 class="box-title mt40"><%= edit_text('contact_page_why_subscribe_title', 'Why subscribe? And don\'t worry. No spam!') %></h3>
+              <p class="contact-p"><%= edit_text('contact_page_why_subscribe_body', 'Subscribe to our monthly newsletter to keep up to date with all promotions and special offers on our wide range of products. We will never share your information with 3rd parties.') %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> <!-- END Container -->
+</section>

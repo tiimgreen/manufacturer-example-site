@@ -10,6 +10,13 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require bootstrap/bootstrap.min
+ *= require font-awesome
+ *= require voyo/animate
+ *= require voyo/rs/settings
+ *= require voyo/voyo
+ *= require voyo/owl.carousel
+ *= require voyo/color_scheme
  *= require_tree .
  *= require_self
  */

@@ -1,0 +1,40 @@
+// Place all the styles related to the Products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.shop-description-product,
+.shop-long-description-product {
+  ul {
+    list-style: none;
+
+    li {
+      margin-left: -20px;
+
+      i {
+        color: #22aba6;
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+.product-specs-table {
+
+  th.actions {
+    width: 15%;
+  }
+}
+
+
+.edit-product-form-container {
+
+  .image-container {
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 20px;
+
+    img, a {
+      clear:both;
+    }
+  }
+}

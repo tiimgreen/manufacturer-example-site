@@ -1,0 +1,95 @@
+<section class="section-4">
+  <div class="container">
+    <% if user_signed_in? %>
+      <div class="pull-right edit-blog-container action-bar">
+        <%= link_to blog_article_edit_path(@blog_article), class: 'btn btn-bg bg-sea' do %>
+          <i class="fa fa-pencil"></i>
+          Edit Blog Article
+        <% end %>
+
+        <% if @blog_article.is_published %>
+          <%= link_to blog_article_unpublish_path(@blog_article), class: 'btn btn-bg bg-orange' do %>
+            <i class="fa fa-times"></i>
+            Unpublish Article
+          <% end %>
+        <% else %>
+          <%= link_to blog_article_publish_path(@blog_article), class: 'btn btn-bg bg-green' do %>
+            <i class="fa fa-check"></i>
+            Publish Article
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+    <div class="row">
+      <div class="col-sm-12 col-md-9 col-md-push-3 space-left ">
+        <div id="blog-posts">
+          <article class="row blog-item">
+            <div class="col-sm-12 blog-image full-image">
+              <% if @blog_article.image.url != '/missing.png' %>
+                <%= image_tag @blog_article.image.url %>
+              <% end %>
+            </div>
+            <div class="col-sm-12 blog-caption">
+              <h2 class="blog-post-title"><%= @blog_article.title %></h2>
+              <div class="sub-post-title mb25">
+                <span class="date"><%= @blog_article.created_at.strftime("%e %b %Y") %></span>
+                <span class="author">
+                  <i class="fa fa-user"></i>
+                  <%= link_to "by #{@blog_article.author.name}", '#' %>
+                </span>
+              </div>
+              <div class="post-content">
+                <%= @markdown.render(@blog_article.body).html_safe %>
+              </div>
+            </div>
+          </article>
+          <div class="row blog-item mb50">
+            <div class="col-sm-12 blog-caption">
+              <div class="media">
+                  <div class="pull-left hidden-xs">
+                    <%= image_tag @blog_article.author.avatar.url, class: 'media-object author-img img-circle' %>
+                  </div>
+                  <div class="media-body">
+                    <h4 class="media-heading"><a href="#" class="user"><%= @blog_article.author.name %></a></h4>
+                    <p><%= @blog_article.author.info %></p>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div> <!-- END Blog Posts -->
+      </div>
+      <div class="col-sm-12 col-md-3 col-md-pull-9 ">
+        <aside class="sidebar sidebar-3">
+          <div class="sidebar-widget">
+            <h3 class="sidebar-title"><%= edit_text('blog_sidebar_title', 'The Blog') %></h3>
+            <p><%= edit_text('blog_sidebar_body', 'Take a look at our blog to kepp up-to-date with all the latest company news....') %></p>
+          </div>
+          <div class="sidebar-widget">
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#tab1" data-toggle="tab">Latest Posts</a></li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane fade in active" id="tab1">
+                <ul class="latest-posts">
+                  <% @sidebar_blog_articles.each do |blog_article| %>
+                    <li>
+                      <div class="image-post">
+                        <% if blog_article.image.url != '/missing.png' %>
+                          <%= image_tag blog_article.image.url %>
+                        <% end %>
+                      </div>
+                      <div class="info-post">
+                        <h5><%= link_to blog_article.title, blog_article_path(blog_article) %></h5>
+                        <span><%= blog_article.created_at.strftime("%e %b %Y") %> </span>
+                      </div>
+                    </li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>

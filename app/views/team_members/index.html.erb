@@ -1,0 +1,104 @@
+<section class="section-3 custom-bg large-padding parallax mt0" data-bg="<%= image_path 'voyo/demo/a-101.jpg' %>">
+  <div class="bg-layer"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-8">
+        <div class="box-about">
+          <h2 class="section-title st2 text-left mb30"><%= edit_text('team_members_page_image_title', 'Everyone wants to join our Team') %></h2>
+          <p class="custom-bg-p mb10"><%= edit_text('team_members_page_image_body') %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-md-3 sm-box2">
+        <div class="box-content">
+          <%= image_tag 'voyo/icons/full-color/128px/volume.png' %>
+          <h3><%= edit_text('team_members_page_infographic_title_1', 'Inspiring') %></h3>
+          <p><%= edit_text('team_members_page_infographic_body_1') %></p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3 sm-box2">
+        <div class="box-content">
+          <%= image_tag 'voyo/icons/full-color/128px/takeoff.png' %>
+          <h3><%= edit_text('team_members_page_infographic_title_2', 'Empowering') %></h3>
+          <p><%= edit_text('team_members_page_infographic_body_2') %></p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3 xs-box2">
+        <div class="box-content">
+          <%= image_tag 'voyo/icons/full-color/128px/trophy.png' %>
+          <h3><%= edit_text('team_members_page_infographic_title_3', 'Rewarding') %></h3>
+          <p><%= edit_text('team_members_page_infographic_body_3') %></p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <div class="box-content">
+          <%= image_tag 'voyo/icons/full-color/128px/rgb.png' %>
+          <h3><%= edit_text('team_members_page_infographic_title_4', 'Fun') %></h3>
+          <p><%= edit_text('team_members_page_infographic_body_4') %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-3 section-dark mb0">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-10 col-sm-offset-1">
+        <h2 class="section-title st2 mb25"><%= edit_text('team_members_page_wide_title', 'What\'s it like working for us?') %></h2>
+        <div class="text-center">
+          <p class="mb0"><%= edit_text('team_members_page_wide_body') %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section team-section mb30">
+  <div class="container">
+    <div class="row">
+      <% if user_signed_in? %>
+        <div class="pull-right action-bar">
+          <%= link_to new_team_member_path, class: 'btn btn-bg bg-green' do %>
+            <i class="fa fa-plus"></i>
+            New Team Member
+          <% end %>
+        </div>
+      <% end %>
+
+      <h3 class="center our-team__header"><%= edit_text('team_members_page_our_team_header', 'Our Team') %></h3>
+
+      <% @team_members.each do |team_member| %>
+        <div class="col-sm-6 xs-box2">
+          <% if user_signed_in? %>
+            <div class="pull-right">
+              <%= link_to delete_team_member_path(team_member), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-bg bg-red' do %>
+                Delete
+              <% end %>
+              <%= link_to edit_team_member_path(team_member), class: 'btn btn-bg bg-sea' do %>
+                Edit
+              <% end %>
+            </div>
+          <% end %>
+
+          <div class="box-team">
+            <div class="team-image">
+              <%= image_tag team_member.avatar.url, alt: 'team' %>
+            </div>
+            <div class="team-info">
+              <h3><%= team_member.name %></h3>
+              <h5><%= team_member.job_title %></h5>
+              <p><%= team_member.short_info %></p>
+            </div>
+          </div> <!-- END Person -->
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
