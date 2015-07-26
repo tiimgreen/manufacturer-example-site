@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= page_title @page_title %></title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/editor/0.1.0/editor.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="<%= controller.controller_name %> <%= controller.action_name %> <%= 'admin-signed-in' if user_signed_in? %> <%= 'admin-page' if on_admin_page? %>">
+
+<%= render 'layouts/sidebar' if user_signed_in? %>
+
+<div id="body">
+  <%= render 'layouts/header' %>
+  <%= render 'shared/flash_messages' %>
+
+  <%= yield %>
+
+  <%= render 'layouts/footer' %>
+</div>
+
+<script src="//cdn.jsdelivr.net/editor/0.1.0/editor.js"></script>
+<script src="//cdn.jsdelivr.net/editor/0.1.0/marked.js"></script>
+<%= javascript_include_tag 'application' %>
+
+</body>
+</html>
