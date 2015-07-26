@@ -2,10 +2,10 @@
   <div class="container">
     <div class="row">
       <div class="col-md-4 sm-box2">
-        <h3 class="box-title mt0"><%= edit_text('contact_page_about_title', 'About us') %></h3>
-        <p class="mb40"><%= edit_text('contact_page_about_body', 'We are a worldwide supplier to electrical components with over 1,000 clients world-wide we can deliver bespoke solutions to suit your businesses needs.') %></p>
-        <h3 class="box-title mt0"><%= edit_text('contact_page_hq_title', 'Headquarters') %></h3>
-        <p><%= edit_text('contact_page_hq_body') %></p>
+        <h3 class="box-title mt0"><%= edit_text(@page, 'contact_page_about_title', 'About us') %></h3>
+        <p class="mb40"><%= edit_text(@page, 'contact_page_about_body', 'We are a worldwide supplier to electrical components with over 1,000 clients world-wide we can deliver bespoke solutions to suit your businesses needs.') %></p>
+        <h3 class="box-title mt0"><%= edit_text(@page, 'contact_page_hq_title', 'Headquarters') %></h3>
+        <p><%= edit_text(@page, 'contact_page_hq_body') %></p>
         <p>
           <a href="#" class="btn btn-bg bg-dark wide btn-address-toggle" data-target="london">London</a>
           <a href="#" class="btn btn-bg bg-dark boxed btn-address-toggle" data-target="dublin">Dublin</a>
@@ -14,19 +14,19 @@
       </div>
       <div class="col-md-8">
         <div class="address" id="london">
-          123 Street Lane,<br>
-          London<br>
-          United Kindgom
+          <%= edit_text(@page, 'company_address_london', '123 Street Lane,
+London
+United Kindgom') %>
         </div>
         <div class="address" id="dublin" style="display: none;">
-          123 Street Lane,<br>
-          Dublin<br>
-          United Kindgom
+          <%= edit_text(@page, 'company_address_dublin', '123 Street Lane,
+Dublin
+United Kindgom') %>
         </div>
         <div class="address" id="los-angeles" style="display: none;">
-          123 Street Lane,<br>
-          Los Angeles<br>
-          United Kindgom
+          <%= edit_text(@page, 'company_address_los_angeles', '123 Street Lane,
+Los Angeles
+United Kindgom') %>
         </div>
       </div>
     </div>
@@ -42,9 +42,9 @@
         <h2 class="section-title st2 text-left mt10 mb25">Get in touch with us</h2>
         <p class="contact-p">Send our customer support team a message and we aim to reply within 24 hours.</p>
         <address class="mb50">
-          <p><i class="fa fa-map-marker"></i> <%= SiteSetting.find_by(key: 'company_address_short').value %></p>
-          <p><i class="fa fa-phone"></i> <%= SiteSetting.find_by(key: 'company_phone_number').value %></p>
-          <p><i class="fa fa-envelope"></i> <%= SiteSetting.find_by(key: 'contact_email').value %></p>
+          <p><i class="fa fa-map-marker"></i> <%= edit_text(@page, 'global_company_address_short') %></p>
+          <p><i class="fa fa-phone"></i> <%= edit_text(@page, 'global_company_phone') %></p>
+          <p><i class="fa fa-envelope"></i> <%= edit_setting('contact_email') %></p>
         </address>
         <ul class="nav nav-tabs">
             <li class="active"><a href="#tab-contact" data-toggle="tab">Contact us</a></li>
@@ -100,8 +100,8 @@
                   </div>
                 </div>
               </form>
-              <h3 class="box-title mt40"><%= edit_text('contact_page_why_subscribe_title', 'Why subscribe? And don\'t worry. No spam!') %></h3>
-              <p class="contact-p"><%= edit_text('contact_page_why_subscribe_body', 'Subscribe to our monthly newsletter to keep up to date with all promotions and special offers on our wide range of products. We will never share your information with 3rd parties.') %></p>
+              <h3 class="box-title mt40"><%= edit_text(@page, 'contact_page_why_subscribe_title', 'Why subscribe? And don\'t worry. No spam!') %></h3>
+              <p class="contact-p"><%= edit_text(@page, 'contact_page_why_subscribe_body', 'Subscribe to our monthly newsletter to keep up to date with all promotions and special offers on our wide range of products. We will never share your information with 3rd parties.') %></p>
           </div>
         </div>
       </div>

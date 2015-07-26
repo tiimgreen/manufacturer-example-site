@@ -4,8 +4,8 @@
     <div class="row">
       <div class="col-md-6 col-sm-8">
         <div class="box-about">
-          <h2 class="section-title st2 text-left mb30"><%= edit_text('team_members_page_image_title', 'Everyone wants to join our Team') %></h2>
-          <p class="custom-bg-p mb10"><%= edit_text('team_members_page_image_body') %></p>
+          <h2 class="section-title st2 text-left mb30"><%= edit_text(@page, 'team_members_page_image_title', 'Everyone wants to join our Team') %></h2>
+          <p class="custom-bg-p mb10"><%= edit_text(@page, 'team_members_page_image_body') %></p>
         </div>
       </div>
     </div>
@@ -18,29 +18,29 @@
       <div class="col-sm-6 col-md-3 sm-box2">
         <div class="box-content">
           <%= image_tag 'voyo/icons/full-color/128px/volume.png' %>
-          <h3><%= edit_text('team_members_page_infographic_title_1', 'Inspiring') %></h3>
-          <p><%= edit_text('team_members_page_infographic_body_1') %></p>
+          <h3><%= edit_text(@page, 'team_members_page_infographic_title_1', 'Inspiring') %></h3>
+          <p><%= edit_text(@page, 'team_members_page_infographic_body_1') %></p>
         </div>
       </div>
       <div class="col-sm-6 col-md-3 sm-box2">
         <div class="box-content">
           <%= image_tag 'voyo/icons/full-color/128px/takeoff.png' %>
-          <h3><%= edit_text('team_members_page_infographic_title_2', 'Empowering') %></h3>
-          <p><%= edit_text('team_members_page_infographic_body_2') %></p>
+          <h3><%= edit_text(@page, 'team_members_page_infographic_title_2', 'Empowering') %></h3>
+          <p><%= edit_text(@page, 'team_members_page_infographic_body_2') %></p>
         </div>
       </div>
       <div class="col-sm-6 col-md-3 xs-box2">
         <div class="box-content">
           <%= image_tag 'voyo/icons/full-color/128px/trophy.png' %>
-          <h3><%= edit_text('team_members_page_infographic_title_3', 'Rewarding') %></h3>
-          <p><%= edit_text('team_members_page_infographic_body_3') %></p>
+          <h3><%= edit_text(@page, 'team_members_page_infographic_title_3', 'Rewarding') %></h3>
+          <p><%= edit_text(@page, 'team_members_page_infographic_body_3') %></p>
         </div>
       </div>
       <div class="col-sm-6 col-md-3">
         <div class="box-content">
           <%= image_tag 'voyo/icons/full-color/128px/rgb.png' %>
-          <h3><%= edit_text('team_members_page_infographic_title_4', 'Fun') %></h3>
-          <p><%= edit_text('team_members_page_infographic_body_4') %></p>
+          <h3><%= edit_text(@page, 'team_members_page_infographic_title_4', 'Fun') %></h3>
+          <p><%= edit_text(@page, 'team_members_page_infographic_body_4') %></p>
         </div>
       </div>
     </div>
@@ -51,9 +51,9 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-10 col-sm-offset-1">
-        <h2 class="section-title st2 mb25"><%= edit_text('team_members_page_wide_title', 'What\'s it like working for us?') %></h2>
+        <h2 class="section-title st2 mb25"><%= edit_text(@page, 'team_members_page_wide_title', 'What\'s it like working for us?') %></h2>
         <div class="text-center">
-          <p class="mb0"><%= edit_text('team_members_page_wide_body') %></p>
+          <p class="mb0"><%= edit_text(@page, 'team_members_page_wide_body') %></p>
         </div>
       </div>
     </div>
@@ -72,7 +72,7 @@
         </div>
       <% end %>
 
-      <h3 class="center our-team__header"><%= edit_text('team_members_page_our_team_header', 'Our Team') %></h3>
+      <h3 class="center our-team__header"><%= edit_text(@page, 'team_members_page_our_team_header', 'Our Team') %></h3>
 
       <% @team_members.each do |team_member| %>
         <div class="col-sm-6 xs-box2">

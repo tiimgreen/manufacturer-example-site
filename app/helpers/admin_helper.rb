@@ -33,12 +33,17 @@ module AdminHelper
         )
     end
 
+    if key == 'company_address_london'
+      value_to_return.gsub!(/\r\n/, '<br>')
+      puts value_to_return.html_safe
+      puts "#########################"
+    end
+
     return value_to_return.html_safe unless uses_markdown
 
-    value_to_return.gsub!(/\r\n/, '<br>')
     value_to_return = @markdown.render(value_to_return).html_safe
 
-    return value_to_return if uses_p_tags
+    return value_to_return.html_safe if uses_p_tags
 
     begin
       value_to_return = Regexp.new(/\A<p>(.*)<\/p>\Z/m).match(value_to_return)[1]
@@ -46,7 +51,7 @@ module AdminHelper
       value_to_return
     end
 
-    value_to_return
+    value_to_return.html_safe
   end
 
   def read_text(

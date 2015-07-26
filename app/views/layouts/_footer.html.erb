@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
-          <p><%= edit_text('footer_tagline') %></p>
+          <p><%= edit_text(@page, 'footer_tagline') %></p>
         </div>
       </div>
       <div class="row">
@@ -17,16 +17,16 @@
           <div class="row">
             <div class="col-sm-12 col-md-11">
               <div class="footer-widget">
-                <h3 class="widget-title"><%= edit_text('footer_about_us_title', 'About Us') %></h3>
-                <p class="mb25"><%= edit_text('footer_about_us_body') %></p>
+                <h3 class="widget-title"><%= edit_text(@page, 'footer_about_us_title', 'About Us') %></h3>
+                <p class="mb25"><%= edit_text(@page, 'footer_about_us_body') %></p>
                 <address class="contact-info">
                   <p>
                     <i class="fa fa-map-marker box-icon color-white"></i>
-                    <%= SiteSetting.find_by(key: 'company_address_short').value %>
+                    <%= edit_text(@page, 'global_company_address_short') %>
                   </p>
                   <p>
                     <i class="fa fa-phone box-icon color-white"></i>
-                    <%= SiteSetting.find_by(key: 'company_phone_number').value %>
+                    <%= edit_text(@page, 'global_company_phone') %>
                   </p>
                 </address>
               </div> <!-- END Footer Widget Keep in touch -->
@@ -37,7 +37,7 @@
           <div class="row">
             <div class="col-sm-6">
               <div class="footer-widget">
-                <h3 class="widget-title"><%= edit_text('footer_blog_title', 'Latest Posts') %></h3>
+                <h3 class="widget-title"><%= edit_text(@page, 'footer_blog_title', 'Latest Posts') %></h3>
                 <ul class="footer-posts">
                   <% @footer_blog_articles.each do |blog_article| %>
                     <li>
@@ -60,7 +60,7 @@
       <div class="row">
         <div class="col-sm-12">
           <div class="pull-left">
-            <p>&copy; Copyright <%= Time.now.year %> <%= SiteSetting.find_by(key: 'company_name').value %></p>
+            <p>&copy; Copyright <%= Time.now.year %> <%= Setting.find_by(key: 'company_name').value %></p>
           </div>
           <div class="pull-right">
             <ul class="footer-menu">

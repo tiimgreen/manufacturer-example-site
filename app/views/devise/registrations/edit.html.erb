@@ -1,60 +1,65 @@
-<section class="page-login section-4">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3">
-        <div class="well well-6 mb0">
-          <h2 class="section-title-2 st-2 mb20">Update Account</h2>
+<div id="page-content" class="settings-container">
+  <div class="panel panel-default sign-in-panel">
+    <div class="panel-heading">Edit <%= resource_name.to_s.humanize %></div>
+    <div class="panel-body">
 
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'form-horizontal' }) do |f| %>
+        <%= devise_error_messages! %>
 
-          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'form form-2' }) do |f| %>
-            <%= devise_error_messages! %>
-
-            <%= f.label :first_name do %>
-              First Name
-              <%= f.text_field :first_name, autofocus: true %>
-            <% end %>
-
-            <%= f.label :last_name do %>
-              First Name
-              <%= f.text_field :last_name %>
-            <% end %>
-
-            <%= f.label :email do %>
-               Email
-              <%= f.email_field :email %>
-            <% end %>
-
-            <%= f.label :info do %>
-              Info
-              <%= f.text_area :info, rows: 5 %>
-            <% end %>
-
-            <%= f.label :avatar do %>
-              Avatar
-              <%= f.file_field :avatar %>
-            <% end %>
-
-            <%= f.label :password do %>
-              Password <i>(leave blank if you don't want to change it)</i>
-              <%= f.password_field :password, autocomplete: "off" %>
-            <% end %>
-
-            <%= f.label :password_confirmation do %>
-              Password Confirmation
-              <%= f.password_field :password_confirmation, autocomplete: "off" %>
-            <% end %>
-
-            <%= f.label :current_password do %>
-              Current Password  <i>(we need your current password to confirm your changes)</i>
-              <%= f.password_field :current_password, autocomplete: "off", required: '' %>
-            <% end %>
-
-            <div>
-              <%= f.submit "Update", class: 'btn voyo-btn-2 rounded mt5' %>
-            </div>
-          <% end %>
+        <div class="form-group">
+          <%= f.label :email, class: 'col-sm-3 control-label' %>
+          <div class="col-sm-9">
+            <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+          </div>
         </div>
-      </div>
+
+        <div class="form-group">
+          <%= f.label :first_name, 'First Name', class: 'col-sm-3 control-label' %>
+          <div class="col-sm-9">
+            <%= f.text_field :first_name, class: 'form-control' %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :last_name, 'Last Name', class: 'col-sm-3 control-label' %>
+          <div class="col-sm-9">
+            <%= f.text_field :last_name, class: 'form-control' %>
+          </div>
+        </div>
+
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+        <% end %>
+
+        <div class="form-group">
+          <%= f.label :password, 'New Password', class: 'col-sm-3 control-label' %>
+          <div class="col-sm-9">
+            <%= f.password_field :password, autocomplete: :off, class: 'form-control' %>
+            <span class="help-block">(leave blank if you don't want to change it)</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password_confirmation, 'New Password Confirmation', class: 'col-sm-3 control-label' %>
+          <div class="col-sm-9">
+            <%= f.password_field :password_confirmation, autocomplete: :off, class: 'form-control' %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :current_password, 'Current Password', class: 'col-sm-3 control-label' %>
+          <div class="col-sm-9">
+            <%= f.password_field :current_password, autocomplete: :off, class: 'form-control' %>
+            <span id="helpBlock" class="help-block">(we need your current password to confirm your changes)</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-offset-3 col-sm-9">
+            <%= f.submit 'Update', class: 'btn btn-primary' %>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
-</section>
+</div>

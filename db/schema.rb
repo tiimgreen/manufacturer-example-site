@@ -16,6 +16,36 @@ ActiveRecord::Schema.define(version: 20150713181419) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "blog_articles", force: :cascade do |t|
+    t.string   "title"
+    t.text     "body"
+    t.integer  "author_id"
+    t.text     "short_description"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.boolean  "is_published"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  create_table "job_locations", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "jobs", force: :cascade do |t|
+    t.string   "title"
+    t.string   "subtitle"
+    t.text     "body"
+    t.integer  "job_location_id"
+    t.string   "apply_url"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
   create_table "page_element_links", force: :cascade do |t|
     t.integer  "web_page_id"
     t.string   "key"
@@ -33,12 +63,63 @@ ActiveRecord::Schema.define(version: 20150713181419) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "product_images", force: :cascade do |t|
+    t.string   "alt_text"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "product_id"
+  end
+
+  create_table "product_reviews", force: :cascade do |t|
+    t.string   "name"
+    t.text     "body"
+    t.integer  "rating"
+    t.integer  "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "product_specifications", force: :cascade do |t|
+    t.string   "key"
+    t.string   "value"
+    t.integer  "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string   "name"
+    t.text     "introduction"
+    t.text     "description"
+    t.integer  "user_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
   create_table "settings", force: :cascade do |t|
     t.string   "key"
     t.text     "value"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "pretty_name"
+  end
+
+  create_table "team_members", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "contact_email",       default: ""
+    t.string   "job_title"
+    t.string   "short_info"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   create_table "users", force: :cascade do |t|
