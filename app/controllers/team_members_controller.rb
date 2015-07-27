@@ -2,7 +2,7 @@ class TeamMembersController < ApplicationController
   before_action :authenticate_user!, except: %w( index show )
 
   def index
-    @team_members = TeamMember.all
+    @team_members = TeamMember.all.order(:order)
   end
 
   def new
@@ -50,6 +50,6 @@ class TeamMembersController < ApplicationController
     def team_member_params
       params.require(:team_member).permit(:first_name, :last_name,
                                           :contact_email, :job_title,
-                                          :short_info, :avatar)
+                                          :short_info, :avatar, :order)
     end
 end

@@ -5,6 +5,7 @@ class TeamMember < ActiveRecord::Base
   validates :first_name, presence: true
   validates :last_name,  presence: true
   validates :job_title,  presence: true
+  validates :order,      presence: true
   validates :avatar,     attachment_presence: true
 
   def name
