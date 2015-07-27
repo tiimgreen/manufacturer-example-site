@@ -4,9 +4,7 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-12 col-md-2">
-          <%= link_to root_path, class: 'logo' do %>
-            <%= image_tag 'voyo/logo.png', alt: 'Logo' %>
-          <% end %>
+          <%= edit_link(@page, 'global_header_logo', 'ABC Company', '/', class: 'logo') %>
         </div>
         <div class="col-sm-12 col-md-10">
           <nav class="navbar-right">
