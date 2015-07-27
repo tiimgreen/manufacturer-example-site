@@ -33,7 +33,7 @@ module AdminHelper
         )
     end
 
-    value_to_return.gsub!(/\r\n/, '<br>')
+    value_to_return.gsub!(/\r\n|\n/, '<br>')
 
     return value_to_return.html_safe unless uses_markdown
 
