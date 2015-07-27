@@ -33,11 +33,7 @@ module AdminHelper
         )
     end
 
-    if key == 'company_address_london'
-      value_to_return.gsub!(/\r\n/, '<br>')
-      puts value_to_return.html_safe
-      puts "#########################"
-    end
+    value_to_return.gsub!(/\r\n/, '<br>')
 
     return value_to_return.html_safe unless uses_markdown
 
@@ -102,7 +98,7 @@ module AdminHelper
 
     return value_to_return.html_safe unless user_signed_in?
 
-    value_to_return +=
-      link_to('Edit', edit_setting_path(setting), class: 'edit-page-element')
+    (value_to_return +=
+      link_to('Edit', edit_setting_path(setting), class: 'edit-page-element')).html_safe
   end
 end

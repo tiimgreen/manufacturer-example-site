@@ -39,8 +39,8 @@ Rails.application.routes.draw do
   match 'jobs/:id',    to: 'jobs#destroy', as: :job_delete, via: :delete
 
   get 'job-locations',          to: 'job_locations#index',   as: :job_locations
-  get 'job-locations/:id',       to: 'job_locations#show',     as: :job_location
   get 'job-locations/new',      to: 'job_locations#new',     as: :job_locations_new
+  get 'job-locations/:id',       to: 'job_locations#show',     as: :job_location
   get 'job-locations/:id/edit', to: 'job_locations#edit',    as: :job_location_edit
   match 'job-locations',        to: 'job_locations#create',  via: :post
   match 'job-locations/:id',    to: 'job_locations#destroy', as: :job_location_delete, via: :delete

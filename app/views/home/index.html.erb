@@ -16,7 +16,7 @@
           data-endspeed="500"
           data-endeasing="Power4.easeIn"
           data-captionhidden="on"
-          style="z-index: 4">Quality
+          style="z-index: 4"><%= edit_text(@page, 'slider_p1_h1', 'Quality', p_tags: false) %>
         </div>
 
         <!-- LAYER NR. 3 -->
@@ -30,7 +30,7 @@
           data-endspeed="500"
           data-endeasing="Power4.easeIn"
           data-captionhidden="on"
-          style="z-index: 7">&amp; Reliability
+          style="z-index: 7"><%= edit_text(@page, 'slider_p1_h2', '& Reliability', p_tags: false) %>
         </div>
 
         <!-- LAYER NR. 4 -->
@@ -45,7 +45,9 @@
           data-endspeed="500"
           data-endeasing="Power4.easeIn"
           data-captionhidden="on"
-          style="z-index: 8">At The Company, we pride ourslefes in the quality<br> products we create. All products come with a 10 year<br> manufacturer warranty, to give you ultimate peace of mind.
+          style="z-index: 8"><%= edit_text(@page, 'slider_p1_p1', 'At The Company, we pride ourslefes in the quality
+products we create. All products come with a 10 year
+ manufacturer warranty, to give you ultimate peace of mind.', p_tags: false) %>
         </div>
 
       </li>
@@ -56,127 +58,251 @@
          <div class="bg-layer op2"></div>
 
           <!-- LAYER NR. 1 -->
-        <div class="tp-caption finewide_large_white customin customout tp-resizeme"
-          data-x="center" data-hoffset="0"
-          data-y="center" data-voffset="-40"
-          data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-          data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-          data-speed="500"
-          data-start="800"
-          data-easing="Power3.easeInOut"
-          data-splitin="chars"
-          data-splitout="chars"
-          data-elementdelay="0.08"
-          data-endelementdelay="0.08"
-          data-end="4000"
-          data-endspeed="500"
-          style="z-index: 2; max-width: auto; max-height: auto; white-space: nowrap;">BUSINESS
-        </div>
+        <% if user_signed_in? %>
+
+          <div class="tp-caption finewide_large_white customin customout tp-resizeme"
+            data-x="center" data-hoffset="0"
+            data-y="center" data-voffset="-40"
+            data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+            data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+            data-speed="500"
+            data-start="800"
+            data-easing="Power3.easeInOut"
+            data-splitin="chars"
+            data-splitout="chars"
+            data-elementdelay="0.08"
+            data-endelementdelay="0.08"
+            data-end="4000"
+            data-endspeed="500"
+            style="z-index: 2; max-width: auto; max-height: auto; white-space: nowrap;"><%= edit_text(@page, 'slider_p2_h1', 'BUSINESS', p_tags: false) %>
+          </div>
 
 
 
-        <!-- LAYER NR. 2 -->
-        <div class="tp-caption finewide_medium_white randomrotate customout tp-resizeme"
-          data-x="center" data-hoffset="0"
-          data-y="center" data-voffset="30"
-          data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-          data-speed="500"
-          data-start="800"
-          data-easing="Power3.easeInOut"
-          data-splitin="chars"
-          data-splitout="chars"
-          data-elementdelay="0.08"
-          data-endelementdelay="0.08"
-          data-end="4000"
-          data-endspeed="500"
-          style="z-index: 4; max-width: auto; max-height: auto; white-space: nowrap;">DEVELOPMENT
-        </div>
+          <!-- LAYER NR. 2 -->
+          <div class="tp-caption finewide_medium_white randomrotate customout tp-resizeme"
+            data-x="center" data-hoffset="0"
+            data-y="center" data-voffset="30"
+            data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+            data-speed="500"
+            data-start="800"
+            data-easing="Power3.easeInOut"
+            data-splitin="chars"
+            data-splitout="chars"
+            data-elementdelay="0.08"
+            data-endelementdelay="0.08"
+            data-end="4000"
+            data-endspeed="500"
+            style="z-index: 4; max-width: auto; max-height: auto; white-space: nowrap;"><%= edit_text(@page, 'slider_p2_h2', 'DEVELOPMENT', p_tags: false) %>
+          </div>
 
-        <!-- LAYER NR. 3 -->
-        <div class="tp-caption boldwide_small_white customin customout tp-resizeme"
-          data-x="center" data-hoffset="-135"
-          data-y="120"
-          data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-          data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-          data-speed="300"
-          data-start="5500"
-          data-easing="Power3.easeInOut"
-          data-splitin="none"
-          data-splitout="none"
-          data-elementdelay="0.08"
-          data-endelementdelay="0.08"
-          data-endspeed="300"
-          style="z-index: 5; max-width: auto; max-height: auto; white-space: nowrap;"><strong>unlimited</strong>
-        </div>
+          <!-- LAYER NR. 3 -->
+          <div class="tp-caption boldwide_small_white customin customout tp-resizeme"
+            data-x="center" data-hoffset="-135"
+            data-y="400"
+            data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+            data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+            data-speed="300"
+            data-start="5500"
+            data-easing="Power3.easeInOut"
+            data-splitin="none"
+            data-splitout="none"
+            data-elementdelay="0.08"
+            data-endelementdelay="0.08"
+            data-endspeed="300"
+            style="z-index: 5; max-width: auto; max-height: auto; white-space: nowrap;"><%= edit_text(@page, 'slider_p2_h3', '**unlimited**', p_tags: false) %>
+          </div>
 
 
 
-        <!-- LAYER NR. 4 -->
-        <div class="tp-caption whitedivider3px_vertical customin tp-resizeme"
-          data-x="center"
-          data-y="110"
-          data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-          data-speed="300"
-          data-start="6000"
-          data-easing="Power3.easeInOut"
-          data-splitin="none"
-          data-splitout="none"
-          data-elementdelay="0.1"
-          data-endelementdelay="0.1"
-          data-endspeed="300"
-          style="z-index: 6; max-width: auto; max-height: auto; white-space: nowrap;">&nbsp;
-        </div>
+          <!-- LAYER NR. 4 -->
+          <div class="tp-caption whitedivider3px_vertical customin tp-resizeme"
+            data-x="center"
+            data-y="390"
+            data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+            data-speed="300"
+            data-start="6000"
+            data-easing="Power3.easeInOut"
+            data-splitin="none"
+            data-splitout="none"
+            data-elementdelay="0.1"
+            data-endelementdelay="0.1"
+            data-endspeed="300"
+            style="z-index: 6; max-width: auto; max-height: auto; white-space: nowrap;">&nbsp;
+          </div>
 
-        <!-- LAYER NR. 5 -->
-        <div class="tp-caption finewide_small_white randomrotate customout tp-resizeme"
-          data-x="center" data-hoffset="130"
-          data-y="120"
-          data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-          data-speed="500"
-          data-start="6900"
-          data-easing="Power3.easeInOut"
-          data-splitin="chars"
-          data-splitout="chars"
-          data-elementdelay="0.08"
-          data-endelementdelay="0.08"
-          data-endspeed="300"
-          style="z-index: 7; max-width: auto; max-height: auto; white-space: nowrap;">SUPPORT
-        </div>
+          <!-- LAYER NR. 5 -->
+          <div class="tp-caption finewide_small_white randomrotate customout tp-resizeme"
+            data-x="center" data-hoffset="130"
+            data-y="400"
+            data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+            data-speed="500"
+            data-start="6900"
+            data-easing="Power3.easeInOut"
+            data-splitin="chars"
+            data-splitout="chars"
+            data-elementdelay="0.08"
+            data-endelementdelay="0.08"
+            data-endspeed="300"
+            style="z-index: 7; max-width: auto; max-height: auto; white-space: nowrap;"><%= edit_text(@page, 'slider_p2_h4', 'SUPPORT', p_tags: false) %>
+          </div>
 
-        <!-- LAYER NR. 6 -->
-        <div class="tp-caption finewide_small_white customin customout tp-resizeme"
-          data-x="center" data-hoffset="130"
-          data-y="160"
-          data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-          data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-          data-speed="500"
-          data-start="7700"
-          data-easing="Power3.easeInOut"
-          data-splitin="words"
-          data-splitout="words"
-          data-elementdelay="0.12"
-          data-endelementdelay="0.12"
-          data-endspeed="300"
-          style="z-index: 8; max-width: auto; max-height: auto; white-space: nowrap;">WARRANTY
-        </div>
+          <!-- LAYER NR. 6 -->
+          <div class="tp-caption finewide_small_white customin customout tp-resizeme"
+            data-x="center" data-hoffset="130"
+            data-y="440"
+            data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+            data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+            data-speed="500"
+            data-start="7700"
+            data-easing="Power3.easeInOut"
+            data-splitin="words"
+            data-splitout="words"
+            data-elementdelay="0.12"
+            data-endelementdelay="0.12"
+            data-endspeed="300"
+            style="z-index: 8; max-width: auto; max-height: auto; white-space: nowrap;"><%= edit_text(@page, 'slider_p2_h5', 'WARRANTY', p_tags: false) %>
+          </div>
 
-        <!-- LAYER NR. 7 -->
-        <div class="tp-caption finewide_small_white customin customout tp-resizeme"
-          data-x="center" data-hoffset="130"
-          data-y="200"
-          data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-          data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-          data-speed="500"
-          data-start="8200"
-          data-easing="Power3.easeInOut"
-          data-splitin="none"
-          data-splitout="none"
-          data-elementdelay="0.08"
-          data-endelementdelay="0.08"
-          data-endspeed="300"
-          style="z-index: 9; max-width: auto; max-height: auto; white-space: nowrap;">EVERYTHING
-        </div>
+          <!-- LAYER NR. 7 -->
+          <div class="tp-caption finewide_small_white customin customout tp-resizeme"
+            data-x="center" data-hoffset="130"
+            data-y="520"
+            data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+            data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+            data-speed="500"
+            data-start="8200"
+            data-easing="Power3.easeInOut"
+            data-splitin="none"
+            data-splitout="none"
+            data-elementdelay="0.08"
+            data-endelementdelay="0.08"
+            data-endspeed="300"
+            style="z-index: 9; max-width: auto; max-height: auto; white-space: nowrap;"><%= edit_text(@page, 'slider_p2_h6', 'EVERYTHING', p_tags: false) %>
+          </div>
+        <% else %>
 
+          <div class="tp-caption finewide_large_white customin customout tp-resizeme"
+            data-x="center" data-hoffset="0"
+            data-y="center" data-voffset="-40"
+            data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+            data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+            data-speed="500"
+            data-start="800"
+            data-easing="Power3.easeInOut"
+            data-splitin="chars"
+            data-splitout="chars"
+            data-elementdelay="0.08"
+            data-endelementdelay="0.08"
+            data-end="4000"
+            data-endspeed="500"
+            style="z-index: 2; max-width: auto; max-height: auto; white-space: nowrap;"><%= edit_text(@page, 'slider_p2_h1', 'BUSINESS', p_tags: false) %>
+          </div>
+
+
+
+          <!-- LAYER NR. 2 -->
+          <div class="tp-caption finewide_medium_white randomrotate customout tp-resizeme"
+            data-x="center" data-hoffset="0"
+            data-y="center" data-voffset="30"
+            data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+            data-speed="500"
+            data-start="800"
+            data-easing="Power3.easeInOut"
+            data-splitin="chars"
+            data-splitout="chars"
+            data-elementdelay="0.08"
+            data-endelementdelay="0.08"
+            data-end="4000"
+            data-endspeed="500"
+            style="z-index: 4; max-width: auto; max-height: auto; white-space: nowrap;"><%= edit_text(@page, 'slider_p2_h2', 'DEVELOPMENT', p_tags: false) %>
+          </div>
+
+          <!-- LAYER NR. 3 -->
+          <div class="tp-caption boldwide_small_white customin customout tp-resizeme"
+            data-x="center" data-hoffset="-135"
+            data-y="120"
+            data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+            data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+            data-speed="300"
+            data-start="5500"
+            data-easing="Power3.easeInOut"
+            data-splitin="none"
+            data-splitout="none"
+            data-elementdelay="0.08"
+            data-endelementdelay="0.08"
+            data-endspeed="300"
+            style="z-index: 5; max-width: auto; max-height: auto; white-space: nowrap;"><%= edit_text(@page, 'slider_p2_h3', '**unlimited**', p_tags: false) %>
+          </div>
+
+
+
+          <!-- LAYER NR. 4 -->
+          <div class="tp-caption whitedivider3px_vertical customin tp-resizeme"
+            data-x="center"
+            data-y="110"
+            data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+            data-speed="300"
+            data-start="6000"
+            data-easing="Power3.easeInOut"
+            data-splitin="none"
+            data-splitout="none"
+            data-elementdelay="0.1"
+            data-endelementdelay="0.1"
+            data-endspeed="300"
+            style="z-index: 6; max-width: auto; max-height: auto; white-space: nowrap;">&nbsp;
+          </div>
+
+          <!-- LAYER NR. 5 -->
+          <div class="tp-caption finewide_small_white randomrotate customout tp-resizeme"
+            data-x="center" data-hoffset="130"
+            data-y="120"
+            data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+            data-speed="500"
+            data-start="6900"
+            data-easing="Power3.easeInOut"
+            data-splitin="chars"
+            data-splitout="chars"
+            data-elementdelay="0.08"
+            data-endelementdelay="0.08"
+            data-endspeed="300"
+            style="z-index: 7; max-width: auto; max-height: auto; white-space: nowrap;"><%= edit_text(@page, 'slider_p2_h4', 'SUPPORT', p_tags: false) %>
+          </div>
+
+          <!-- LAYER NR. 6 -->
+          <div class="tp-caption finewide_small_white customin customout tp-resizeme"
+            data-x="center" data-hoffset="130"
+            data-y="160"
+            data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+            data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+            data-speed="500"
+            data-start="7700"
+            data-easing="Power3.easeInOut"
+            data-splitin="words"
+            data-splitout="words"
+            data-elementdelay="0.12"
+            data-endelementdelay="0.12"
+            data-endspeed="300"
+            style="z-index: 8; max-width: auto; max-height: auto; white-space: nowrap;"><%= edit_text(@page, 'slider_p2_h5', 'WARRANTY', p_tags: false) %>
+          </div>
+
+          <!-- LAYER NR. 7 -->
+          <div class="tp-caption finewide_small_white customin customout tp-resizeme"
+            data-x="center" data-hoffset="130"
+            data-y="200"
+            data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+            data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+            data-speed="500"
+            data-start="8200"
+            data-easing="Power3.easeInOut"
+            data-splitin="none"
+            data-splitout="none"
+            data-elementdelay="0.08"
+            data-endelementdelay="0.08"
+            data-endspeed="300"
+            style="z-index: 9; max-width: auto; max-height: auto; white-space: nowrap;"><%= edit_text(@page, 'slider_p2_h6', 'EVERYTHING', p_tags: false) %>
+          </div>
+        <% end %>
 
       </li>
       <li data-transition="fade" data-slotamount="7" data-delay="8000" >
@@ -205,7 +331,7 @@
           data-end="1500"
           data-endspeed="500"
           data-endeasing="Power4.easeIn"
-          style="z-index: 2">ABC Company
+          style="z-index: 2"><%= edit_text(@page, 'slider_p3_h1', 'ABC Company', p_tags: false) %>
         </div>
 
         <!-- LAYER NR. 2 -->
@@ -219,7 +345,7 @@
           data-end="3000"
           data-endspeed="500"
           data-endeasing="Power4.easeIn"
-          style="z-index: 3">we can help <strong>your business</strong>
+          style="z-index: 3"><%= edit_text(@page, 'slider_p3_h2', 'we can help **your business**', p_tags: false) %>
         </div>
 
         <!-- LAYER NR. 3 -->
@@ -233,7 +359,7 @@
           data-easing="Back.easeOut"
           data-endspeed="300"
           data-endeasing="Back.easeIn"
-          style="z-index: 4">reach new horizons
+          style="z-index: 4"><%= edit_text(@page, 'slider_p3_h3', 'reach new horizons', p_tags: false) %>
         </div>
       </li>
     </ul>

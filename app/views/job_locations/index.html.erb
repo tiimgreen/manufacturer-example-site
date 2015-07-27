@@ -30,8 +30,10 @@
         </tbody>
       </table>
     <% else %>
-      <h3 class="center">There are no job locations.</p>
-      <%= link_to 'Add one here...', job_locations_new_path, class: 'center btn btn-bg bg-sea' %>
+      <h3 class="center clear-both">
+        There are no job locations.<br>
+        <%= link_to 'Add one here...', job_locations_new_path, class: 'btn btn-bg bg-sea hard-top-20' %>
+      </h3>
     <% end %>
   </div>
 </section>
