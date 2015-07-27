@@ -75,7 +75,7 @@
       <h3 class="center our-team__header"><%= edit_text(@page, 'team_members_page_our_team_header', 'Our Team') %></h3>
 
       <% @team_members.each do |team_member| %>
-        <div class="col-sm-6 xs-box2">
+        <div class="col-sm-6 xs-box2 team-member-container">
           <% if user_signed_in? %>
             <div class="pull-right">
               <%= link_to delete_team_member_path(team_member), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-bg bg-red' do %>
