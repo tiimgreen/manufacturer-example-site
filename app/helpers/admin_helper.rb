@@ -59,9 +59,9 @@ module AdminHelper
     page_id = key.start_with?('global') ? 0 : page.id
 
     if (page_element = PageElementText.find_by(key: key, web_page_id: page_id))
-      page_element.value.gsub!(/\r\n/, '<br>').html_safe
+      page_element.value.gsub!(/\r\n|\n/, '<br>').html_safe
     else
-      default.gsub!(/\r\n/, '<br>').html_safe
+      default.gsub!(/\r\n|\n/, '<br>').html_safe
     end
   end
 

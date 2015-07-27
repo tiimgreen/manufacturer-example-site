@@ -13,9 +13,9 @@ Rails.application.routes.draw do
   get 'contact', to: 'contact#index'
 
   get 'team',          to: 'team_members#index',   as: :team_members
+  get 'team/new',      to: 'team_members#new',     as: :new_team_member
   get 'team/:id',      to: 'team_members#show',    as: :team_member
   get 'team/:id/edit', to: 'team_members#edit',    as: :edit_team_member
-  get 'team/new',      to: 'team_members#new',     as: :new_team_member
   match 'team',        to: 'team_members#create',  via: :post
   match 'team/:id',    to: 'team_members#update',  via: :patch
   match 'team/:id',    to: 'team_members#destroy', as: :delete_team_member, via: :delete
