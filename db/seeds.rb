@@ -8,7 +8,7 @@
 
 Setting.create(
   key: 'company_name',
-  pretty_name: 'Copmany Name',
+  pretty_name: 'Company Name',
   value: 'ABC Company'
 )
 
